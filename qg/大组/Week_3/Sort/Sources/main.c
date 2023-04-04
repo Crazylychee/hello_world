@@ -31,6 +31,7 @@ int main() {
     }
 
     Test(arr,size,N);
+    system("pause");
     return 0;
 }
 void printArr(int *b,int N){
