@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0"
+         metadata-complete="true">
+
+  <display-name>Welcome to Tomcat</display-name>
+  <description>
+    Welcome to Tomcat
+  </description>
+
+  <!--注册ServLet-->
+  <servlet>
+    <servlet-name>demo1</servlet-name>
+    <servlet-class>com.lychee.servlet.DemoServlet2</servlet-class>
+  </servlet>
+    <servlet>
+        <servlet-name>demo2</servlet-name>
+        <servlet-class>com.lychee.servlet.DemoServlet1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>demo3</servlet-name>
+        <servlet-class>com.lychee.servlet.DemoServlet3</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>demo4</servlet-name>
+        <servlet-class>com.lychee.servlet.FileServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>demo5</servlet-name>
+        <servlet-class>com.lychee.servlet.ImageServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>demo6</servlet-name>
+        <servlet-class>com.lychee.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>demo7</servlet-name>
+        <servlet-class>com.lychee.servlet.Sessiondemo01</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>demo8</servlet-name>
+        <servlet-class>com.lychee.servlet.Sessiondemo02</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>demo9</servlet-name>
+        <servlet-class>com.lychee.servlet.SessionDemo03</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>demo10</servlet-name>
+        <servlet-class>com.lychee.servlet.TestServletBase</servlet-class>
+    </servlet>
+  <!--ServLet的清求路径-->
+  <!--LocaLhost;8980/s1/heLLo/heLLo-->
+  <servlet-mapping>
+      <servlet-name>demo1</servlet-name>
+      <url-pattern>/demo1</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>demo2</servlet-name>
+        <url-pattern>/demo2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>demo3</servlet-name>
+        <url-pattern>/demo3</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>demo4</servlet-name>
+        <url-pattern>/demo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>demo5</servlet-name>
+        <url-pattern>/img</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>demo6</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>demo7</servlet-name>
+        <url-pattern>/sess</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>demo8</servlet-name>
+        <url-pattern>/sess1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>demo9</servlet-name>
+        <url-pattern>/sess2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>demo10</servlet-name>
+        <url-pattern>/bas</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>HelloForm</servlet-name>
+        <servlet-class>com.runoob.test.HelloForm</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloForm</servlet-name>
+        <url-pattern>/form</url-pattern>
+    </servlet-mapping>
+
+
+
+
+<!--    设置的session默认的失效时间-->
+    <session-config>
+<!--        15分钟之后Session自动失效，以分钟为单位-->
+        <session-timeout>1</session-timeout>
+    </session-config>
+    <servlet>
+        <servlet-name>CheckBox</servlet-name>
+        <servlet-class>com.runoob.test.CheckBox</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckBox</servlet-name>
+        <url-pattern>/CheckBox</url-pattern>
+    </servlet-mapping>
+
+
+
+    <filter>
+        <filter-name>LogFilter</filter-name>
+        <filter-class>com.runoob.test.LogFilter</filter-class>
+        <init-param>
+            <param-name>Site</param-name>
+            <param-value>菜鸟教程</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>LogFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <servlet>
+        <!-- 类名 -->
+        <servlet-name>DisplayHeader</servlet-name>
+        <!-- 所在的包 -->
+        <servlet-class>com.runoob.test.DisplayHeader</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DisplayHeader</servlet-name>
+        <!-- 访问的网址 -->
+        <url-pattern>/DisplayHeader</url-pattern>
+    </servlet-mapping>
+
+
+  </web-app>

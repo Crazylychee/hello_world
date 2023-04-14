@@ -1,8 +1,7 @@
 package Brand;
 
-
-import com.alibaba.druid.pool.DruidDataSourceFactory;
 import org.junit.Test;
+import utils.MyDataSource;
 
 import javax.sql.DataSource;
 import java.io.FileInputStream;
@@ -29,10 +28,10 @@ public class BrandTest {
         //1.获取Connection
         //3.加载配置文件
         Properties prop = new Properties();
-        prop.load(new FileInputStream("src/druid.properties"));
+        prop.load(new FileInputStream("src/db.properties"));
 
         //5. 获取数据库连接 Connection
-        DataSource dataSource = DruidDataSourceFactory.createDataSource(prop);
+        DataSource dataSource = new MyDataSource();
         Connection conn = dataSource.getConnection();
 
 //        定义SQL
@@ -75,6 +74,11 @@ public class BrandTest {
         conn.close();
 
     }
+
+    /**
+     * 测试添加
+     * @throws Exception
+     */
     @Test
     public void testAdd() throws Exception {
         // 接收页面提交的参数
@@ -86,10 +90,9 @@ public class BrandTest {
         //1. 获取Connection
         //3. 加载配置文件
         Properties prop = new Properties();
-        prop.load(new FileInputStream("src/druid.properties"));
+        prop.load(new FileInputStream("src/db.properties"));
         //4. 获取连接池对象
-        DataSource dataSource =
-                DruidDataSourceFactory.createDataSource(prop);
+        DataSource dataSource = new MyDataSource();
         //5. 获取数据库连接 Connection
         Connection conn = dataSource.getConnection();
         //2. 定义SQL
@@ -139,10 +142,9 @@ public class BrandTest {
         //1. 获取Connection
         //3. 加载配置文件
         Properties prop = new Properties();
-        prop.load(new FileInputStream("src/druid.properties"));
+        prop.load(new FileInputStream("src/db.properties"));
         //4. 获取连接池对象
-        DataSource dataSource =
-                DruidDataSourceFactory.createDataSource(prop);
+        DataSource dataSource =new MyDataSource();
         //5. 获取数据库连接 Connection
         Connection conn = dataSource.getConnection();
         //2. 定义SQL
@@ -174,7 +176,7 @@ public class BrandTest {
         conn.close();
     }
     /**
-     * 删除
+     * 测试删除
      * 1. SQL：
      delete from tb_brand where id = ?
      * 2. 参数：需要，id
@@ -187,10 +189,9 @@ public class BrandTest {
         //1. 获取Connection
         //3. 加载配置文件
         Properties prop = new Properties();
-        prop.load(new FileInputStream("src/druid.properties"));
+        prop.load(new FileInputStream("src/db.properties"));
         //4. 获取连接池对象
-        DataSource dataSource =
-                DruidDataSourceFactory.createDataSource(prop);
+        DataSource dataSource = new MyDataSource();
         //5. 获取数据库连接 Connection
         Connection conn = dataSource.getConnection();
         //2. 定义SQL
